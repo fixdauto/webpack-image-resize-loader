@@ -20,7 +20,8 @@
     "lint:fix": "eslint --max-warnings 0 --fix --ext .ts .",
     "lint:markdown": "remark .",
     "test": "tsc --project tsconfig.test-build.json && jest",
-    "release": "HUSKY_SKIP_HOOKS=1 standard-version"
+    "release": "HUSKY_SKIP_HOOKS=1 standard-version",
+    "install": "npm run build"
   },
   "author": {
     "name": "Calvin Liang",
