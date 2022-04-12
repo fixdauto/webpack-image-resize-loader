@@ -229,7 +229,8 @@ async function processImage(
     sharpOptions,
   }: FullOptions
 ): Promise<Buffer> {
-  let sharpImage = sharp(Buffer.from(content));
+  const sharpLoadOpts = format === "gif" ? { animated: true } : {};
+  let sharpImage = sharp(Buffer.from(content), sharpLoadOpts);
   const { height: imageHeight, width: imageWidth } =
     await sharpImage.metadata();
   const normalizedImageHeight = imageHeight ?? Number.MAX_VALUE;
